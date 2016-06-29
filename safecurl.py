@@ -285,7 +285,7 @@ class Url(object):
         if len(blacklistedIps) != 0:
             has_match = any(Url.cidrMatch(ip, blip) for ip in ips for blip in blacklistedIps)
             if has_match:
-                raise InvalidIPException("Provided hostname 'hostname' resolves to '%s', which matches a blacklisted value: %s" % (", ".join(ips), blacklistedIp))
+                raise InvalidIPException("Provided hostname 'hostname' resolves to '%s', which matches a blacklisted value: %s" % (", ".join(ips), blacklistedIps))
 
         return hostname
 
